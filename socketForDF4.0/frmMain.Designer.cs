@@ -53,9 +53,10 @@
             // btnOpen
             // 
             this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpen.Location = new System.Drawing.Point(156, 8);
+            this.btnOpen.Location = new System.Drawing.Point(266, 7);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(86, 49);
+            this.btnOpen.Size = new System.Drawing.Size(77, 29);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Connect";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -63,34 +64,38 @@
             // 
             // txtIP
             // 
-            this.txtIP.Location = new System.Drawing.Point(50, 8);
+            this.txtIP.Location = new System.Drawing.Point(43, 10);
+            this.txtIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(100, 23);
+            this.txtIP.Size = new System.Drawing.Size(81, 23);
             this.txtIP.TabIndex = 1;
             this.txtIP.Text = "127.0.0.1";
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(50, 34);
+            this.txtPort.Location = new System.Drawing.Point(169, 10);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(100, 23);
+            this.txtPort.Size = new System.Drawing.Size(81, 23);
             this.txtPort.TabIndex = 2;
             this.txtPort.Text = "5555";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Location = new System.Drawing.Point(10, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 23);
+            this.label1.Size = new System.Drawing.Size(31, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "IP";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(10, 34);
+            this.label2.Location = new System.Drawing.Point(130, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 23);
+            this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Port";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,9 +103,10 @@
             // btnDisconnect
             // 
             this.btnDisconnect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDisconnect.Location = new System.Drawing.Point(248, 8);
+            this.btnDisconnect.Location = new System.Drawing.Point(347, 7);
+            this.btnDisconnect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(86, 49);
+            this.btnDisconnect.Size = new System.Drawing.Size(84, 29);
             this.btnDisconnect.TabIndex = 0;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = true;
@@ -111,20 +117,22 @@
             this.txtRcv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRcv.Location = new System.Drawing.Point(12, 88);
+            this.txtRcv.Location = new System.Drawing.Point(10, 59);
+            this.txtRcv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRcv.Multiline = true;
             this.txtRcv.Name = "txtRcv";
             this.txtRcv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRcv.Size = new System.Drawing.Size(443, 137);
+            this.txtRcv.Size = new System.Drawing.Size(520, 195);
             this.txtRcv.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(365, 231);
+            this.button1.Location = new System.Drawing.Point(457, 258);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.Size = new System.Drawing.Size(72, 18);
             this.button1.TabIndex = 6;
             this.button1.Text = "Send Data";
             this.button1.UseVisualStyleBackColor = true;
@@ -133,9 +141,10 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(340, 8);
+            this.button2.Location = new System.Drawing.Point(435, 7);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 49);
+            this.button2.Size = new System.Drawing.Size(95, 29);
             this.button2.TabIndex = 7;
             this.button2.Text = "Listen(Any)";
             this.button2.UseVisualStyleBackColor = true;
@@ -145,23 +154,26 @@
             // 
             this.txtSendTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSendTo.Location = new System.Drawing.Point(97, 231);
+            this.txtSendTo.Location = new System.Drawing.Point(78, 258);
+            this.txtSendTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSendTo.Name = "txtSendTo";
-            this.txtSendTo.Size = new System.Drawing.Size(265, 23);
+            this.txtSendTo.Size = new System.Drawing.Size(377, 23);
             this.txtSendTo.TabIndex = 5;
             this.txtSendTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSendTo_KeyDown);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lbStatus,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.lbEnum});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 258);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 284);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(464, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(536, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
@@ -203,30 +215,33 @@
             this.lbMsg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbMsg.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMsg.Location = new System.Drawing.Point(13, 61);
+            this.lbMsg.Location = new System.Drawing.Point(10, 38);
+            this.lbMsg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(442, 24);
+            this.lbMsg.Size = new System.Drawing.Size(518, 19);
             this.lbMsg.TabIndex = 3;
             this.lbMsg.Text = "msg :";
             this.lbMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboMode
             // 
+            this.comboMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMode.Enabled = false;
             this.comboMode.FormattingEnabled = true;
             this.comboMode.Items.AddRange(new object[] {
             "String",
             "[Ascii] mixed"});
-            this.comboMode.Location = new System.Drawing.Point(12, 230);
+            this.comboMode.Location = new System.Drawing.Point(10, 257);
+            this.comboMode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboMode.Name = "comboMode";
-            this.comboMode.Size = new System.Drawing.Size(79, 24);
+            this.comboMode.Size = new System.Drawing.Size(64, 24);
             this.comboMode.TabIndex = 9;
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(464, 280);
+            this.ClientSize = new System.Drawing.Size(536, 306);
             this.Controls.Add(this.comboMode);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
@@ -243,7 +258,8 @@
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(480, 319);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(387, 263);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Socket tester v1.0 [CODE REAPER]";
