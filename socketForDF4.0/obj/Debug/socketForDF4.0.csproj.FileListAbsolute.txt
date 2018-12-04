@@ -36,4 +36,3 @@ C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.cspr
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.csproj.CoreCompileInputs.cache
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.exe
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.pdb
-C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.csprojAssemblyReference.cache

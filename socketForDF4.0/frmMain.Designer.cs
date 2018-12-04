@@ -54,7 +54,7 @@
             // 
             this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpen.Location = new System.Drawing.Point(266, 7);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(77, 29);
             this.btnOpen.TabIndex = 0;
@@ -65,7 +65,7 @@
             // txtIP
             // 
             this.txtIP.Location = new System.Drawing.Point(43, 10);
-            this.txtIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIP.Margin = new System.Windows.Forms.Padding(2);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(81, 23);
             this.txtIP.TabIndex = 1;
@@ -74,7 +74,7 @@
             // txtPort
             // 
             this.txtPort.Location = new System.Drawing.Point(169, 10);
-            this.txtPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(2);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(81, 23);
             this.txtPort.TabIndex = 2;
@@ -104,7 +104,7 @@
             // 
             this.btnDisconnect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDisconnect.Location = new System.Drawing.Point(347, 7);
-            this.btnDisconnect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDisconnect.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(84, 29);
             this.btnDisconnect.TabIndex = 0;
@@ -118,21 +118,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRcv.Location = new System.Drawing.Point(10, 59);
-            this.txtRcv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRcv.Margin = new System.Windows.Forms.Padding(2);
             this.txtRcv.Multiline = true;
             this.txtRcv.Name = "txtRcv";
             this.txtRcv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRcv.Size = new System.Drawing.Size(520, 195);
+            this.txtRcv.Size = new System.Drawing.Size(520, 209);
             this.txtRcv.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(457, 258);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(457, 271);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 18);
+            this.button1.Size = new System.Drawing.Size(72, 25);
             this.button1.TabIndex = 6;
             this.button1.Text = "Send Data";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(435, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 29);
             this.button2.TabIndex = 7;
@@ -154,8 +154,8 @@
             // 
             this.txtSendTo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSendTo.Location = new System.Drawing.Point(78, 258);
-            this.txtSendTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSendTo.Location = new System.Drawing.Point(78, 272);
+            this.txtSendTo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSendTo.Name = "txtSendTo";
             this.txtSendTo.Size = new System.Drawing.Size(377, 23);
             this.txtSendTo.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.lbEnum});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 284);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 298);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
             this.statusStrip1.Size = new System.Drawing.Size(536, 22);
@@ -232,8 +232,8 @@
             this.comboMode.Items.AddRange(new object[] {
             "String",
             "[Ascii] mixed"});
-            this.comboMode.Location = new System.Drawing.Point(10, 257);
-            this.comboMode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboMode.Location = new System.Drawing.Point(10, 271);
+            this.comboMode.Margin = new System.Windows.Forms.Padding(2);
             this.comboMode.Name = "comboMode";
             this.comboMode.Size = new System.Drawing.Size(64, 24);
             this.comboMode.TabIndex = 9;
@@ -241,7 +241,7 @@
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(536, 306);
+            this.ClientSize = new System.Drawing.Size(536, 320);
             this.Controls.Add(this.comboMode);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
@@ -258,11 +258,12 @@
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(387, 263);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Socket tester v1.0 [CODE REAPER]";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

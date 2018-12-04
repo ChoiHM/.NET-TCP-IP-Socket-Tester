@@ -110,7 +110,7 @@ namespace mklib
                     return;
                 }
 
-                Disconnect(); // make sure disconnecting
+                //Disconnect(); // make sure disconnecting
 
                 State = eState.Connecting;
                 innerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -234,9 +234,10 @@ namespace mklib
             }
             if (State == eState.Listening)
             {
-                //if (onError != null) { onError(53, "Socket Listen error (Listening중에 재시도할 수 없음)"); }
+                if (onError != null) { onError(53, "Socket Listen error (Listening중에 재시도할 수 없음)"); }
                 return;
             }
+
 
             Task.Factory.StartNew(() =>
             {
@@ -263,8 +264,8 @@ namespace mklib
             asyncObj ao = (asyncObj)ar.AsyncState;
             try
             {
-                State = eState.Connected;
                 innerSocket = ao._socket.EndAccept(ar);
+                State = eState.Connected;
                 procBeginReceive();
             }
             catch (Exception ex)
@@ -286,22 +287,26 @@ namespace mklib
                     if (innerSocket.Connected)
                     {
                         innerSocket.Shutdown(SocketShutdown.Both);
+
+                        // Disconnect할때 가끔씩 오랫동안 Pending되는 작업을 기다릴때가 있어, Timeout 적용을 위해 비동기 작업으로 변경
+                        //innerSocket.BeginDisconnect(true, new AsyncCallback(procEndDisconnect), obj).AsyncWaitHandle.WaitOne(1000);
+
+                        // Disconnect 작업은 Windows자체적으로 정리해야될 작업이 많으므로 반드시 기다려야 한다.
+                        // 괜히 무리해서 TimeOut을 설정해버리면 해야될 일이 제대로 처리되지 않아서 그 port가 막혀버리므로 조심해야 함..
+                        innerSocket.Disconnect(true);
                     }
 
-                    // Disconnect할때 가끔씩 오랫동안 Pending되는 작업을 기다릴때가 있어, Timeout 적용을 위해 비동기 작업으로 변경
-                    //innerSocket.BeginDisconnect(true, new AsyncCallback(procEndDisconnect), obj).AsyncWaitHandle.WaitOne(1000);
-                    // Disconnect 작업은 Windows자체적으로 정리해야될 작업이 많으므로 반드시 기다려야 한다.
-                    // 괜히 무리해서 TimeOut을 설정해버리면 해야될 일이 제대로 처리되지 않아서 그 port가 막혀버리므로 조심해야 함..
-                    innerSocket.Disconnect(true);
                     innerSocket.Close();
                     innerSocket = null;
-                    if (this.onDisconnect != null) { this.onDisconnect(this); }
                 }
                 if (sckListener != null)
                 {
                     sckListener.Stop();
-                    sckListener.Server.Shutdown(SocketShutdown.Both);
-                    sckListener.Server.Close(500);
+                    if (sckListener.Server.Connected)
+                    {
+                        sckListener.Server.Shutdown(SocketShutdown.Both);
+                    }
+                    sckListener.Server.Close();
                     sckListener = null;
                 }
             }
@@ -313,6 +318,7 @@ namespace mklib
             {
                 State = eState.Closed;
                 innerSocket = null;
+                if (this.onDisconnect != null) { this.onDisconnect(this); }
             }
         }
 
