@@ -117,9 +117,17 @@ namespace mklib
 
                 Task.Factory.StartNew(() =>
                 {
-                    obj._socket = innerSocket;
-                    innerSocket.BeginConnect(remoteIP, remotePort, new AsyncCallback(procEndConnect), obj);
-                    Debug.WriteLine($"Socket connecting to {remoteIP}:{remotePort}...");
+                    try
+                    {
+                        obj._socket = innerSocket;
+                        innerSocket.BeginConnect(remoteIP, remotePort, new AsyncCallback(procEndConnect), obj);
+                        Debug.WriteLine(string.Format("Socket connecting to {0}:{1}...", remoteIP, remotePort));
+                    }
+                    catch (Exception ex)
+                    {
+                        Disconnect();
+                        return;
+                    }
                 }, TaskCreationOptions.LongRunning);
             }
             catch (Exception ex)
