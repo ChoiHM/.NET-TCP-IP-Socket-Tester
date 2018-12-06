@@ -11,7 +11,7 @@ using System.Timers;
 namespace mklib
 {
     //****************************************************************
-    //                  Extended Socket Class 4.0.0
+    //                  Extended Socket Class 4.0.1
     //****************************************************************
     // Extended Socket Class for .NET Framework 4.0
     // Windows XP/7/8/10
