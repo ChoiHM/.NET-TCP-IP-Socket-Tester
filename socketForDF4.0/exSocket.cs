@@ -11,7 +11,7 @@ using System.Timers;
 namespace mklib
 {
     //****************************************************************
-    //                  Extended Socket Class 4.0.1
+    //                  Extended Socket Class 4.0.2
     //****************************************************************
     // Extended Socket Class for .NET Framework 4.0
     // Windows XP/7/8/10
@@ -47,9 +47,9 @@ namespace mklib
 
         public string remoteIP { get; set; }
         public int remotePort { get; set; }
-        
+
         protected eState _State = eState.Closed;
-        public eState State { get{return _State;} set{_State = value; } }
+        public eState State { get { return _State; } set { _State = value; } }
         public enum eState { Closed = 0, Connecting = 1, Connected = 2, Listening = 5 }
         public enum eSendMode { String, Mixed }
 
@@ -126,7 +126,7 @@ namespace mklib
                         innerSocket.BeginConnect(remoteIP, remotePort, new AsyncCallback(procEndConnect), obj);
                         Debug.WriteLine(string.Format("Socket connecting to {0}:{1}...", remoteIP, remotePort));
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         Disconnect();
                         return;
@@ -159,10 +159,12 @@ namespace mklib
                     if (onError != null) { onError(23, "procEndConnect error : InnerSocket=null)"); }
                     Disconnect();
                 }
+
+                if (this.onConnect != null) { this.onConnect(this); }
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(21, string.Format("procEndConnect error (Ex.Message={0})",ex.Message)); }
+                if (onError != null) { onError(21, string.Format("procEndConnect error (Ex.Message={0})", ex.Message)); }
                 State = eState.Closed;
                 return;
             }
@@ -170,7 +172,7 @@ namespace mklib
             if (isConnected)
             {
                 State = eState.Connected;
-                Debug.WriteLine(string.Format("Socket connected to {0}",innerSocket.RemoteEndPoint.ToString()));
+                Debug.WriteLine(string.Format("Socket connected to {0}", innerSocket.RemoteEndPoint.ToString()));
                 procBeginReceive();
             }
             else
@@ -183,7 +185,6 @@ namespace mklib
         protected void procBeginReceive()
         {
             State = eState.Connected;
-            if (this.onConnect != null) { this.onConnect(this); }
             try
             {
                 obj._socket = innerSocket;
@@ -249,7 +250,6 @@ namespace mklib
                 return;
             }
 
-
             Task.Factory.StartNew(() =>
             {
                 try
@@ -264,7 +264,7 @@ namespace mklib
                 }
                 catch (Exception ex)
                 {
-                    if (onError != null) { onError(53, string.Format("Socket Listen error (Ex.Message={0})",ex.Message)); }
+                    if (onError != null) { onError(53, string.Format("Socket Listen error (Ex.Message={0})", ex.Message)); }
                     return;
                 }
             }, TaskCreationOptions.LongRunning);
@@ -281,7 +281,7 @@ namespace mklib
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(61, string.Format("procEndAccept error (Ex.Message={0})",ex.Message)); }
+                if (onError != null) { onError(61, string.Format("procEndAccept error (Ex.Message={0})", ex.Message)); }
                 Disconnect();
             }
         }
@@ -343,7 +343,7 @@ namespace mklib
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(109, string.Format("procEndDisconnect error (Ex.Message={0})",ex.Message)); }
+                if (onError != null) { onError(109, string.Format("procEndDisconnect error (Ex.Message={0})", ex.Message)); }
                 Disconnect();
             }
         }
