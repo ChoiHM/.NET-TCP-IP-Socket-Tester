@@ -11,7 +11,7 @@ using System.Timers;
 namespace mklib
 {
     //****************************************************************
-    //                  Extended Socket Class 4.0.4
+    //                  Extended Socket Class 4.0.5
     //****************************************************************
     // Extended Socket Class for .NET Framework 4.0
     // Windows XP/7/8/10
@@ -47,9 +47,9 @@ namespace mklib
 
         public string remoteIP { get; set; }
         public int remotePort { get; set; }
-
+        
         protected eState _State = eState.Closed;
-        public eState State { get { return _State; } set { _State = value; } }
+        public eState State { get{return _State;} set{_State = value; } }
         public enum eState { Closed = 0, Connecting = 1, Connected = 2, Listening = 5 }
         public enum eSendMode { String, Mixed }
 
@@ -152,6 +152,11 @@ namespace mklib
             try
             {
                 innerSocket = ao._socket;
+                if (innerSocket.Connected == false)
+                {
+                    Disconnect();
+                    return;
+                }
                 ao._socket.EndConnect(ar);
 
                 if (innerSocket == null)
@@ -164,7 +169,7 @@ namespace mklib
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(21, string.Format("procEndConnect error (Ex.Message={0})", ex.Message)); }
+                if (onError != null) { onError(21, string.Format("procEndConnect error (Ex.Message={0})",ex.Message)); }
                 State = eState.Closed;
                 return;
             }
@@ -172,7 +177,7 @@ namespace mklib
             if (isConnected)
             {
                 State = eState.Connected;
-                Debug.WriteLine(string.Format("Socket connected to {0}", innerSocket.RemoteEndPoint.ToString()));
+                Debug.WriteLine(string.Format("Socket connected to {0}",innerSocket.RemoteEndPoint.ToString()));
                 procBeginReceive();
             }
             else
@@ -258,14 +263,14 @@ namespace mklib
                     isServer = true;
                     sckListener = new TcpListener(IPAddress.Any, LocalPort);
                     sckListener.ExclusiveAddressUse = true;
-                    sckListener.Start(1);
+                    sckListener.Start(10);
                     State = eState.Listening;
                     obj._socket = sckListener.Server;
                     sckListener.BeginAcceptTcpClient(new AsyncCallback(procEndAccept), obj);
                 }
                 catch (Exception ex)
                 {
-                    if (onError != null) { onError(53, string.Format("Socket Listen error (Ex.Message={0})", ex.Message)); }
+                    if (onError != null) { onError(53, string.Format("Socket Listen error (Ex.Message={0})",ex.Message)); }
                     return;
                 }
             }, TaskCreationOptions.LongRunning);
@@ -278,12 +283,11 @@ namespace mklib
             {
                 innerSocket = ao._socket.EndAccept(ar);
                 State = eState.Connected;
-                if (this.onConnect != null) { this.onConnect(this); }
                 procBeginReceive();
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(61, string.Format("procEndAccept error (Ex.Message={0})", ex.Message)); }
+                if (onError != null) { onError(61, string.Format("procEndAccept error (Ex.Message={0})",ex.Message)); }
                 Disconnect();
             }
         }
@@ -306,7 +310,7 @@ namespace mklib
 
                         // Disconnect 작업은 Windows자체적으로 정리해야될 작업이 많으므로 반드시 기다려야 한다.
                         // 괜히 무리해서 TimeOut을 설정해버리면 해야될 일이 제대로 처리되지 않아서 그 port가 막혀버리므로 조심해야 함..
-                        innerSocket.Disconnect(true);
+                        //innerSocket.Disconnect(true);
                     }
 
                     innerSocket.Close();
@@ -345,7 +349,7 @@ namespace mklib
             }
             catch (Exception ex)
             {
-                if (onError != null) { onError(109, string.Format("procEndDisconnect error (Ex.Message={0})", ex.Message)); }
+                if (onError != null) { onError(109, string.Format("procEndDisconnect error (Ex.Message={0})",ex.Message)); }
                 Disconnect();
             }
         }
@@ -387,6 +391,7 @@ namespace mklib
             catch (Exception ex)
             {
                 if (onError != null) { onError(119, "Socket 메세지 전송 Error (" + ex.Message + ")"); }
+                Disconnect();
             }
         }
 
@@ -425,6 +430,7 @@ namespace mklib
             catch (Exception ex)
             {
                 if (onError != null) { onError(129, "Socket SendData Error (" + ex.Message + ")"); }
+                Disconnect();
             }
         }
         #endregion
