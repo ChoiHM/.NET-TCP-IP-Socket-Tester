@@ -57,7 +57,7 @@
             this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(77, 29);
-            this.btnOpen.TabIndex = 0;
+            this.btnOpen.TabIndex = 2;
             this.btnOpen.Text = "Connect";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
@@ -68,7 +68,7 @@
             this.txtIP.Margin = new System.Windows.Forms.Padding(2);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(81, 23);
-            this.txtIP.TabIndex = 1;
+            this.txtIP.TabIndex = 0;
             this.txtIP.Text = "127.0.0.1";
             // 
             // txtPort
@@ -77,7 +77,7 @@
             this.txtPort.Margin = new System.Windows.Forms.Padding(2);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(81, 23);
-            this.txtPort.TabIndex = 2;
+            this.txtPort.TabIndex = 1;
             this.txtPort.Text = "5555";
             // 
             // label1
@@ -107,7 +107,7 @@
             this.btnDisconnect.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(84, 29);
-            this.btnDisconnect.TabIndex = 0;
+            this.btnDisconnect.TabIndex = 3;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = true;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
@@ -124,6 +124,7 @@
             this.txtRcv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRcv.Size = new System.Drawing.Size(520, 209);
             this.txtRcv.TabIndex = 5;
+            this.txtRcv.TabStop = false;
             // 
             // button1
             // 
@@ -133,7 +134,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 25);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Send Data";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -145,7 +146,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 29);
-            this.button2.TabIndex = 7;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Listen(Any)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -158,7 +159,7 @@
             this.txtSendTo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSendTo.Name = "txtSendTo";
             this.txtSendTo.Size = new System.Drawing.Size(377, 23);
-            this.txtSendTo.TabIndex = 5;
+            this.txtSendTo.TabIndex = 6;
             this.txtSendTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSendTo_KeyDown);
             // 
             // statusStrip1
@@ -236,7 +237,7 @@
             this.comboMode.Margin = new System.Windows.Forms.Padding(2);
             this.comboMode.Name = "comboMode";
             this.comboMode.Size = new System.Drawing.Size(64, 24);
-            this.comboMode.TabIndex = 9;
+            this.comboMode.TabIndex = 5;
             // 
             // frmMain
             // 

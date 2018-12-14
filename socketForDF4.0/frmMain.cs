@@ -31,7 +31,7 @@ namespace socketForDF4._0
         {
             this.Invoke(new MethodInvoker(() =>
             {
-                lbMsg.Text = $"errCode:{errCode}, Desc:{Description}";
+                lbMsg.Text = "errCode:" + errCode +", Desc:" + Description;
             }));
         }
 

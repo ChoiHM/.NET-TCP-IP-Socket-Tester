@@ -37,3 +37,12 @@ C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.cspr
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.exe
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.pdb
 C:\Users\CHOI\Desktop\tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.csprojAssemblyReference.cache
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\bin\Debug\socketForDF4.0.exe.config
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.exe
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.pdb
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4._0.frmMain.resources
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4._0.frmAsc.resources
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4._0.Properties.Resources.resources
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\obj\Debug\socketForDF4.0.csproj.GenerateResource.Cache
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\bin\Debug\socketForDF4.0.exe
+C:\Users\CHOI\Desktop\.NET-TCP-IP-Socket-Tester-master\socketForDF4.0\bin\Debug\socketForDF4.0.pdb
